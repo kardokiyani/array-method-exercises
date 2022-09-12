@@ -15,6 +15,19 @@ you. Set this variable to the .map array method you created.
 
 const values = [10, 20, 30, 40, 50, 100, 200, 300, 400, 500, 1000];
 
-const valuesBelow100 = null; // Replace null and add .filter code here
+// Replace null and add .filter code here
+const valuesBelow100 = values.filter((value) => value <= 100);
+
+// Less ideal: The following is without using the implicit return:
+const valuesBelow100WithReturn = values.filter((value) => {
+  return value <= 100;
+});
+
+// Less ideal: The following is with specifically checking if it's true:
+const valuesBelow100WithIf = values.filter((value) => {
+  if (value <= 100) {
+    return true;
+  }
+});
 
 console.log(valuesBelow100);
